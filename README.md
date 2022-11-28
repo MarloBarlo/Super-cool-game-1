@@ -12,7 +12,7 @@
 
 ## Verison 1.0
 
-- Simple game. Just enemiesa and players in one spot.
+- Simple game. Just enemies and players in one spot.
 
 
 
