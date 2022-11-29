@@ -13,7 +13,7 @@ public:
     void updateLocation();
     void draw();
     Vector2 location;
-    float speed = 2.0f;
+    float speed = 2.0;
 
 
 };
