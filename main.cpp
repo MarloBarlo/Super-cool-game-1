@@ -34,7 +34,7 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-            ClearBackground(BLACK);
+            ClearBackground(WHITE);
 
             BeginMode2D(camera);
                 rlPushMatrix();
