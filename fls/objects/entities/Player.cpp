@@ -6,7 +6,7 @@
 
 void Player::updateLocation() {}
 
-void Player::drawPlayer() {
+void Player::draw() {
     Rectangle playerRect = {location.x, location.y, 50, 50};
     DrawRectangleRec(playerRect, BLUE);
 

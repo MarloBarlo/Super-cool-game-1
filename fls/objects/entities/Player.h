@@ -8,12 +8,12 @@
 
 //We plan to add more, but just for now I think we need to have the player with simple stuff.
 class Player {
-private:
-    Vector2 location;
 public:
     Player(float x, float y);
     void updateLocation();
-    void drawPlayer();
+    void draw();
+    Vector2 location;
+    float speed = 2.0f;
 
 
 };
