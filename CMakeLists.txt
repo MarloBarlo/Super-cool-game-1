@@ -24,7 +24,7 @@ endif()
 
 # Our Project
 
-add_executable(${PROJECT_NAME} main.cpp fls/objects/Player.cpp fls/objects/Player.h)
+add_executable(${PROJECT_NAME} main.cpp fls/objects/entities/Player.cpp fls/objects/entities/Player.h fls/objects/entities/Enemy.cpp fls/objects/entities/Enemy.h)
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
 
