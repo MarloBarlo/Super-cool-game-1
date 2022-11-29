@@ -10,7 +10,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
     Camera2D camera = { 0 };
-    camera.zoom = .75f;
+    camera.zoom = .25;
     Player newbie = Player(500, 250);
 
     //----------------------------------------------------------------------------------
@@ -34,8 +34,8 @@ int main() {
         if (IsKeyDown(KEY_A)) newbie.location.x -= newbie.speed;
         if (IsKeyDown(KEY_W)) newbie.location.y -= newbie.speed;
         if (IsKeyDown(KEY_S)) newbie.location.y += newbie.speed;
-        if (IsKeyDown(KEY_LEFT_SHIFT)) newbie.speed = 4.0f;
-        else newbie.speed = 2.0f;
+        if (IsKeyDown(KEY_LEFT_SHIFT)) newbie.speed = 4.0;
+        else newbie.speed = 2.0;
 
 
         //----------------------------------------------------------------------------------
@@ -43,15 +43,15 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-        ClearBackground(WHITE);
-        BeginMode2D(camera);
-        rlPushMatrix();
-        rlTranslatef(0, 25*50, 0);
-        rlRotatef(90, 1, 0, 0);
-        DrawGrid(100, 50);
-        rlPopMatrix();
-        newbie.draw();
-        EndMode2D();
+            ClearBackground(WHITE);
+                BeginMode2D(camera);
+                    rlPushMatrix();
+                    rlTranslatef(0, 25*50, 0);
+                    rlRotatef(90, 1, 0, 0);
+                    DrawGrid(100, 50);
+                    rlPopMatrix();
+                    newbie.draw();
+                EndMode2D();
 
 
         EndDrawing();
