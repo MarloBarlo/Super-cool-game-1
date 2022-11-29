@@ -1,7 +1,8 @@
 #include "raylib.h"
 #include "rlgl.h"
 #include "raymath.h"
-#include "fls/objects/Player.h"
+#include "fls/objects/entities/Player.h"
+
 int main() {
 
     // Variables
@@ -19,7 +20,6 @@ int main() {
 
     InitWindow(screenWidth, screenHeight, "super-cool-game-1");
 
-    float P = 2.00;
 
 
     SetTargetFPS(60);
@@ -30,12 +30,12 @@ int main() {
     {
         // Update
         //----------------------------------------------------------------------------------
-        if (IsKeyDown(KEY_D)) newbie.location.x += P;
-        if (IsKeyDown(KEY_A)) newbie.location.x -= P;
-        if (IsKeyDown(KEY_W)) newbie.location.y -= P;
-        if (IsKeyDown(KEY_S)) newbie.location.y += P;
-        if (IsKeyDown(KEY_LEFT_SHIFT)) P = 4;
-        else P = 2.00;
+        if (IsKeyDown(KEY_D)) newbie.location.x += newbie.speed;
+        if (IsKeyDown(KEY_A)) newbie.location.x -= newbie.speed;
+        if (IsKeyDown(KEY_W)) newbie.location.y -= newbie.speed;
+        if (IsKeyDown(KEY_S)) newbie.location.y += newbie.speed;
+        if (IsKeyDown(KEY_LEFT_SHIFT)) newbie.speed = 4.0f;
+        else newbie.speed = 2.0f;
 
 
         //----------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ int main() {
         rlRotatef(90, 1, 0, 0);
         DrawGrid(100, 50);
         rlPopMatrix();
-        newbie.drawPlayer();
+        newbie.draw();
         EndMode2D();
 
 
