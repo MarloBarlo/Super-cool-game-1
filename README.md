@@ -3,8 +3,6 @@
 ## How are we doing it?
 
 - Raylib
-- hi :)
-
 
 
 ## Verison 1.0
