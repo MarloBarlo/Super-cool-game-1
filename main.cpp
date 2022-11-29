@@ -19,6 +19,9 @@ int main() {
 
     InitWindow(screenWidth, screenHeight, "super-cool-game-1");
 
+    float P = 2.00;
+
+
     SetTargetFPS(60);
 
     //----------------------------------------------------------------------------------
@@ -27,7 +30,12 @@ int main() {
     {
         // Update
         //----------------------------------------------------------------------------------
-
+        if (IsKeyDown(KEY_D)) newbie.location.x += P;
+        if (IsKeyDown(KEY_A)) newbie.location.x -= P;
+        if (IsKeyDown(KEY_W)) newbie.location.y -= P;
+        if (IsKeyDown(KEY_S)) newbie.location.y += P;
+        if (IsKeyDown(KEY_LEFT_SHIFT)) P = 4;
+        else P = 2.00;
 
 
         //----------------------------------------------------------------------------------
@@ -35,15 +43,15 @@ int main() {
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-            ClearBackground(WHITE);
-            BeginMode2D(camera);
-                rlPushMatrix();
-                    rlTranslatef(0, 25*50, 0);
-                    rlRotatef(90, 1, 0, 0);
-                    DrawGrid(100, 50);
-                rlPopMatrix();
-                newbie.drawPlayer();
-            EndMode2D();
+        ClearBackground(WHITE);
+        BeginMode2D(camera);
+        rlPushMatrix();
+        rlTranslatef(0, 25*50, 0);
+        rlRotatef(90, 1, 0, 0);
+        DrawGrid(100, 50);
+        rlPopMatrix();
+        newbie.drawPlayer();
+        EndMode2D();
 
 
         EndDrawing();
