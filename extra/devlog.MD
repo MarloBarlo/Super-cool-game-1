@@ -1,2 +1,2 @@
 # 11/28/2022
-[Dewy] - Me and Marlo decide to start working on a game together to get more experience. We have a general idea of what we want to do.
+[Dewy] - Me and Marlo decide to start working on a game together to get more experience. We have a general idea of what we want to do. Today we just wanted to get all the code setup and get a good base. 
