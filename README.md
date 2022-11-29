@@ -2,11 +2,7 @@
 
 ## How are we doing it?
 
-
-
-- All Code
-- Using [Raylib](https://www.raylib.com/index.html)
-- Zombie Game
+- Raylib
 
 
 
