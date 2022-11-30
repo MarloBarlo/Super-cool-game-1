@@ -9,7 +9,7 @@ public:
     Enemy(float x, float y);
     void updateLocation();
     void draw();
-    Vector2 location{};
+    Vector2 location;
 };
 
 

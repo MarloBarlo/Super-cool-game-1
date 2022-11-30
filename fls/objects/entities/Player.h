@@ -14,7 +14,7 @@ public:
     void draw();
     Vector2 location;
     float speed = 2.0;
-
+    float stamina = 20;
 
 };
 
