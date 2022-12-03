@@ -16,6 +16,9 @@ public:
     float speed = 2.0;
     float stamina = 20;
 
+    int checkRotation(Vector2 mouseLocation);
+
+    int rotation;
 };
 
 
