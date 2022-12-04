@@ -18,7 +18,7 @@ public:
 
     int checkRotation(Vector2 mouseLocation);
 
-    int rotation;
+    double rotation = 0;
 };
 
 

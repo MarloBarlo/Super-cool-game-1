@@ -6,15 +6,22 @@
 #include "rlgl.h"
 #include <cmath>
 #include <iostream>
+#include <math.h>
 
 void Player::updateLocation() {}
 
 void Player::draw() {
+    Vector2 topLeft = {location.x - 25, location.y - 25};
+    Vector2 topRight = {location.x + 25, location.y - 25};
+
+
+
+
     Rectangle playerRect = {location.x, location.y, 50, 50};
-    //rlTranslatef(location.x, location.y, 0);
-    //rlRotatef(rotation, 0, 0, -1);
-    DrawRectanglePro(playerRect, {0, 0}, 0, BLUE);
-    DrawLineEx({location.x, location.y + 5}, {location.x + 50, location.y + 5}, 8, BLACK);
+    DrawRectanglePro(playerRect, {25, 25}, rotation, BLUE);
+
+    Vector2 myMouse = GetMousePosition();
+    std::cout << myMouse.x << " " << myMouse.y << std::endl;
 
 }
 

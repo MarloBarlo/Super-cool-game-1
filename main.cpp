@@ -11,11 +11,10 @@ int main() {
     //----------------------------------------------------------------------------------
     const int screenWidth = 800;
     const int screenHeight = 450;
-    Player newbie = Player(screenWidth/2.0f, screenHeight/2.0f);
+    Player newbie = Player(0, 0);
     Camera2D camera = { 0 };
     camera.zoom = .50f;
     camera.offset = (Vector2){ screenWidth/2.0f, screenHeight/2.0f };
-
 
     //----------------------------------------------------------------------------------
 
@@ -32,7 +31,7 @@ int main() {
     {
         // Update
         //----------------------------------------------------------------------------------
-        camera.target = Vector2{newbie.location.x + 25, newbie.location.y + 25};
+        camera.target = Vector2{newbie.location.x, newbie.location.y};
         float wheel = GetMouseWheelMove();
         if (wheel != 0) {
             const float zoomIncrement = 0.125f;
@@ -46,9 +45,7 @@ int main() {
         if (IsKeyDown(KEY_LEFT_SHIFT)) newbie.speed = 4.0, newbie.stamina -= .10;
         else newbie.speed = 2.0;
         if (newbie.stamina <= 0) newbie.speed = 2.0;
-        newbie.rotation = newbie.checkRotation(GetMousePosition());
-
-
+        newbie.rotation += 1;
 
 
         //----------------------------------------------------------------------------------
