@@ -16,9 +16,10 @@ public:
     float speed = 2.0;
     float stamina = 20;
 
-    int checkRotation(Vector2 mouseLocation);
-
     double rotation = 0;
+
+    void drawUpdate(Vector2 mouseLocation);
+
 };
 
 
