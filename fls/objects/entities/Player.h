@@ -10,17 +10,13 @@
 class Player {
 public:
     Player(float x, float y);
-    void updateLocation();
-    void draw();
     Vector2 location;
     float speed = 2.0;
     float stamina = 20;
-
     double rotation = 0;
 
     void drawUpdate(Vector2 mouseLocation);
 
-    void drawUpdate(Vector2 mouseLocation, Texture2D texture);
 };
 
 
