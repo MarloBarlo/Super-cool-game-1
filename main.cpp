@@ -9,14 +9,17 @@ int main() {
 
     // Variables
     //----------------------------------------------------------------------------------
+
     const int screenWidth = 800;
     const int screenHeight = 450;
+    InitWindow(screenWidth, screenHeight, "super-cool-game-1");
     Player newbie = Player(0, 0);
-    Camera2D camera = { 0 };
+    Camera2D camera = {};
     camera.zoom = .50f;
     camera.rotation = 0;
     camera.offset = (Vector2){ screenWidth/2.0f, screenHeight/2.0f };
     Vector2 mouseLocation = GetScreenToWorld2D(GetMousePosition(), camera);
+
 
     //----------------------------------------------------------------------------------
 
@@ -62,8 +65,8 @@ int main() {
         rlRotatef(90, 1, 0, 0);
         DrawGrid(100, 50);
         rlPopMatrix();
-        newbie.draw();
-        //newbie.drawUpdate(mouseLocation);
+        newbie.drawUpdate(mouseLocation);
+        //newbie.draw();
         EndMode2D();
 
 
@@ -72,6 +75,5 @@ int main() {
     }
 
     // De-Initialization
-
     CloseWindow();        // Close window and OpenGL context
 }

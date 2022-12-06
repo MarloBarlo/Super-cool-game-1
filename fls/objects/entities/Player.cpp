@@ -11,11 +11,22 @@
 
 
 void Player::drawUpdate(Vector2 mouseLocation) {
+
     Vector2 followPoint = {location.x, location.y};
+    Vector2 topLeft = {location.x - 25, location.y - 25};
+    Vector2 topRight = {location.x + 25, location.y - 25};
     Rectangle playerRect = {location.x, location.y, 50, 50};
-    std::cout << location.x << " " << location.y << std::endl;
-    //std::cout << mouseLocation.x - location.x << " " << mouseLocation.y - location.y << std::endl;
+    Vector2 triangle = {mouseLocation.x - location.x, (mouseLocation.y - location.y) * -1};
     //std::cout << mouseLocation.x << " " << mouseLocation.y << std::endl;
+    rotation = atan(triangle.x / triangle.y) * 180/M_PI;
+    std::cout << rotation << std::endl;
+
+    Vector2 topLeftPrime = {float(location.x * cos(rotation) - (-1 * location.y * sin(rotation))),
+                            float(location.x * sin(rotation) + (-1 * location.y * cos(rotation)))};
+
+
+
+
     DrawRectanglePro(playerRect, {25, 25}, rotation, BLUE);
     //std::cout << mouseLocation.x << " " << mouseLocation.y << std::endl;
     //std::cout << location.x << " " << location.y << std::endl;

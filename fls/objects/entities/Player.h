@@ -20,6 +20,7 @@ public:
 
     void drawUpdate(Vector2 mouseLocation);
 
+    void drawUpdate(Vector2 mouseLocation, Texture2D texture);
 };
 
 
