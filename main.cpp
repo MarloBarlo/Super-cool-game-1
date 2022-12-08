@@ -63,7 +63,6 @@ int main() {
         DrawGrid(100, 50);
         rlPopMatrix();
         newbie.drawUpdate(mouseLocation);
-        //newbie.draw();
         EndMode2D();
 
 
