@@ -36,6 +36,8 @@ int main() {
         mouseLocation = GetScreenToWorld2D(GetMousePosition(), camera);
         float wheel = GetMouseWheelMove();
 
+        std::cout << newbie.speed << " " << newbie.stamina << std::endl;
+
         if (wheel != 0) {
             const float zoomIncrement = 0.125f;
             camera.zoom += (wheel*zoomIncrement);
@@ -46,9 +48,9 @@ int main() {
         if (IsKeyDown(KEY_A)) newbie.location.x -= newbie.speed;
         if (IsKeyDown(KEY_W)) newbie.location.y -= newbie.speed;
         if (IsKeyDown(KEY_S)) newbie.location.y += newbie.speed;
-        if (IsKeyDown(KEY_LEFT_SHIFT)) newbie.speed = 4.0, newbie.stamina -= .10;
+        if (IsKeyDown(KEY_LEFT_SHIFT) & (newbie.stamina > 0)) newbie.speed = 4.0, newbie.stamina -= .10;
         else newbie.speed = 2.0;
-        if (newbie.stamina <= 0) newbie.speed = 2.0;
+        if (!IsKeyDown(KEY_LEFT_SHIFT) & (newbie.stamina < 20)) newbie.stamina += .10;
 
         //----------------------------------------------------------------------------------
 
