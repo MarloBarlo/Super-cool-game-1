@@ -5,10 +5,10 @@
 #include "raylib.h"
 
 
-
 //We plan to add more, but just for now I think we need to have the player with simple stuff.
 class Player {
 public:
+
     Player(float x, float y);
     Vector2 location;
     float speed = 2.0;

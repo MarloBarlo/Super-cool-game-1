@@ -1,6 +1,4 @@
-//
-// Created by 14794 on 11/28/2022.
-//
+
 
 #include "Player.h"
 #include "rlgl.h"
